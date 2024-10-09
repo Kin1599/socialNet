@@ -1,7 +1,6 @@
 // ОБНУЛЕНИЕ
 @import "fonts";
-
-$background-color: #f9f9f9;
+@import "./colors.scss";
 
 *, *:before, *:after{
     box-sizing: border-box;
