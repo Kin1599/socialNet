@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: python_app
+    command: python3 app.py  # команда для запуска приложения
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"  # если приложение слушает на порту 5000
+    depends_on:
+      - db
+    env_file:
+      - .env  # подгружаем переменные из файла .env
+
+  db:
+    image: postgres
+    container_name: postgres_db
+    env_file:
+      - .env  # подгружаем переменные из файла .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
