@@ -15,6 +15,9 @@ app.include_router(user_page_router.router)
 def home():
     return {"message": "Hello World!"}
 
+@app.on_event("startup")
+async def startup_event():
+    Base.metadata.create_all(bind=engine)
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)

@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from decouple import config
-from models import Base
+from app.db_models import Base
 from sqlalchemy.orm import Session
 
 DB_USERNAME = config("DB_USERNAME")
