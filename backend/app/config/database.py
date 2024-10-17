@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
 from decouple import config
+from models import Base
 from sqlalchemy.orm import Session
 
 DB_USERNAME = config("DB_USERNAME")
@@ -10,6 +11,8 @@ DB_HOST = config("DB_HOST")
 DATABASE_URL = f"postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 
 engine = create_engine(DATABASE_URL)
+
+Base.metadata.create_all(bind=engine)
 
 def create_session():
     db_local = Session(bind=engine)
