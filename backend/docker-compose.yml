@@ -23,7 +23,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   watchtower:
-    image: watchtower
+    image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
