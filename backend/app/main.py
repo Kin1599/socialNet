@@ -11,9 +11,9 @@ app = FastAPI()
 app.include_router(auth_router.router)
 app.include_router(user_page_router.router)
 
-@app.get("/", dependencies=[Depends(JWTBearer())], tags=[""])
-def home():
-    return {"message": "Hello World!"}
+@app.get("/{uid}", dependencies=[Depends(JWTBearer())], tags=[""])
+def home(uid: int):
+    return {"message": f"Hello World! {uid}"}
 
 @app.on_event("startup")
 async def startup_event():
