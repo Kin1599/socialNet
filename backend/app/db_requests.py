@@ -33,7 +33,7 @@ def user_login(user: UserDtoLogin, db: Session):
 
 def get_user_page(uid: int, db: Session):
     user_line = db.query(User).filter(User.id == uid).first()
-    posts = db.query(Post).filter(Post.uid == uid)
+    posts = db.query(Post).filter(Post.uid == uid).all()
     return {'user_data': user_line, 'user_posts': posts}
 
 
