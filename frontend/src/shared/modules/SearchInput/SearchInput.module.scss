@@ -1,0 +1,13 @@
+
+@use '../../styles/fonts.scss' as *;
+
+.searchInput{
+    height: 40px;
+    border-radius: 123px;
+    border: 1px solid #CBD5E1;
+    font-size: 16px;
+    font-family: "Plus Jakarta Sans Medium";
+    padding: 9px 8px 9px 40px;
+    outline: none;
+    color: #475569;
+}

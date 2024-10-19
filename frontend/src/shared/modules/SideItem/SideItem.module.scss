@@ -1,0 +1,36 @@
+
+@use '../../styles/fonts.scss' as *;
+
+.sideItem{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    cursor: pointer;
+
+    &__main{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__icon{
+        width: 24px;
+        height: 24px;
+    }
+
+    &__text{
+        color: #1E293B;
+        font-size: 16px;
+        font-family: "Plus Jakarta Sans Bold";
+    }
+
+    &__notification{
+        border: 1px solid #A5B4FC;
+        border-radius: 1234px;
+        background-color: #EEF2FF;
+        color: #4F46E5;
+        padding: 4px 10px;
+    }
+}

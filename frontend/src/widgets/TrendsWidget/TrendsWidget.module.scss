@@ -1,0 +1,41 @@
+
+@use '../../shared/styles/fonts.scss' as *;
+
+.trendsWidget{
+    padding: 20px 15px;
+    border-radius: 10px;
+    background-color: #F8FAFC;
+
+    > *:not(:last-child){
+        margin-bottom: 25px;
+    }
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__settings{
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) saturate(100%)
+    }
+
+    &__title{
+        font-family: "Plus Jakarta Sans Bold";
+        font-size: 24px;
+    }
+
+    &__items{
+        > *:not(:last-child){
+            margin-bottom: 15px;
+        }
+    }
+
+    &__moreBtn{
+        font-size: 18px;
+        color: #1DA1F2;
+        cursor: pointer;
+    }
+}

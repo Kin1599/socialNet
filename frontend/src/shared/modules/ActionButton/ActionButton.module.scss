@@ -1,0 +1,28 @@
+
+@use '../../styles/fonts.scss' as *;
+
+.actionButton{
+
+    font-family: "Plus Jakarta Sans Bold";
+
+    &__btn{
+        height: 48px;
+        width: 179px;
+        font-size: 16px;
+        padding: 13px 20px;
+        border: none;
+        border-radius: 1234px;
+        background-color: #4F46E5;
+        color: #ffffff;
+        outline: none;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        cursor: pointer;
+    }
+
+    &__icon{
+        width: 20px;
+        height: 20px;
+    }
+}

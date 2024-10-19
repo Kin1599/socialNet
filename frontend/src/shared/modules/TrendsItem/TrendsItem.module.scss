@@ -1,0 +1,26 @@
+
+@use '../../styles/fonts.scss' as *;
+
+.trendsItem{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &__main{
+
+        > *:not(:last-child){
+            margin-bottom: 6px;
+        }
+
+        .main__topic, .main__posts{
+            font-size: 16px;
+            color: #393B41;
+        }
+
+        .main__title{
+            font-family: 'Plus Jakarta Sans SemiBold';
+            font-size: 20px;
+        }
+    }
+}

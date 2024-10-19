@@ -1,0 +1,29 @@
+
+@use '../../shared/styles/fonts.scss' as *;
+
+.suggestionsWidget{
+    padding: 20px 15px;
+    border-radius: 10px;
+    background-color: #F8FAFC;
+
+    > *:not(:last-child){
+        margin-bottom: 25px;
+    }
+
+    &__title{
+        font-family: "Plus Jakarta Sans Bold";
+        font-size: 24px;
+    }
+
+    &__items{
+        > *:not(:last-child){
+            margin-bottom: 25px;
+        }
+    }
+
+    &__moreBtn{
+        font-size: 18px;
+        color: #1DA1F2;
+        cursor: pointer;
+    }
+}

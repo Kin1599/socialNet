@@ -1,0 +1,26 @@
+
+
+.sideProfileInfo{
+    padding: 20px 10px;
+    background-color: #FFF;
+    border: 1px solid #E2E8F0;
+    
+    > *:not(:last-child){
+        margin-bottom: 20px;
+    }
+
+    &__search{
+        position: relative;
+
+        > img{
+            position: absolute;
+            top: 12px;
+            left: 14px;
+        }
+    }
+
+    &__gallery{
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,39 @@
+
+@use '../../styles/fonts.scss' as *;
+
+.suggestionItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    cursor: pointer;
+
+    &__content{
+        display: flex;
+        align-items: center;
+        gap: 13px;
+    }
+
+    &__avatar{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__info{
+        > *:not(:last-child){
+            margin-bottom: 5px;
+        }
+
+        .info__name{
+            font-family: "Plus Jakarta Sans SemiBold";
+            font-size: 18px;
+        }
+
+        .info__nickname{
+            font-size: 18px;
+            color: rgba($color: #000000, $alpha: 0.6);
+        }
+    }
+}
