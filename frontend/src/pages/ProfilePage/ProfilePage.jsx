@@ -49,7 +49,7 @@ function ProfilePage() {
   return (
     <div className={cl.profilePage}>
       <div className={cl.profilePage__sidebar}>
-        <SideBar/>
+        <SideBar avatar={avatar}/>
       </div>
       <div className={cl.profilePage__content}>
         <div className={cl.profilePage__header}>

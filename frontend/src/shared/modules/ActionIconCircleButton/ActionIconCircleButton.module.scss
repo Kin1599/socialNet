@@ -1,0 +1,18 @@
+.actionIconCircleButton {
+    width: var(--button-size, 48px);
+    height: var(--button-size, 48px);
+    border-radius: 50%;
+    border: 1px solid var(--button-color, #CBD5E1);
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    > img {
+      width: 24px;
+      height: 24px;
+      filter: var(--filter-color, brightness(0) saturate(100%) invert(31%) sepia(23%) saturate(501%) hue-rotate(176deg) brightness(95%) contrast(91%));
+    }
+  }
+  

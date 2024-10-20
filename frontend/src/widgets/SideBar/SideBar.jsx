@@ -1,12 +1,12 @@
 import React from 'react'
 import cl from './SideBar.module.scss'
+import {Link} from 'react-router-dom'
 
 //* MODULES
 import SearchInput from '../../shared/modules/SearchInput/SearchInput'
 import SideItem from '../../shared/modules/SideItem/SideItem'
 
 //* ICONS
-import avatar from '../../shared/assets/mocks/avatar1.JPG'
 import logo from '../../shared/assets/icons/logo.svg'
 import logoText from '../../shared/assets/icons/logoText.svg'
 import home from '../../shared/assets/icons/home.svg'
@@ -19,13 +19,15 @@ import questions from '../../shared/assets/icons/questions.svg'
 import logout from '../../shared/assets/icons/logout.svg'
 import search from '../../shared/assets/icons/search.svg'
 
-function SideBar() {
+function SideBar({avatar}) {
   return (
     <div className={cl.sideBar}>
         <div className={cl.sideBar__main}>
             <div className={cl.sideBar__logo}>
-                <img src={logo} alt="logoImg" className={cl.logoImg}/>
-                <img src={logoText} alt="logoText" className={cl.logoText}/>
+                <Link to="/">
+                    <img src={logo} alt="logoImg" className={cl.logoImg}/>
+                    <img src={logoText} alt="logoText" className={cl.logoText}/>
+                </Link>
             </div>
             <div className={cl.sideBar__search}>
                 <SearchInput placeholder="Search..." width="100%"/>
@@ -42,15 +44,17 @@ function SideBar() {
             </div>
         </div>
         <div className={cl.sideBar__footer}>
-            <div className={cl.footer__profile}>
-                <div className={cl.profile__avatar}>
-                    <img src={avatar} alt="avatar" />
+            <Link to="/profile">
+                <div className={cl.footer__profile}>
+                    <div className={cl.profile__avatar}>
+                        <img src={avatar} alt="avatar" />
+                    </div>
+                    <div className={cl.profile__info}>
+                        <div className={cl.profile__name}>Dmitry Konoplyannikov</div>
+                        <div className={cl.profile__nickname}>@Kin1599</div>
+                    </div>
                 </div>
-                <div className={cl.profile__info}>
-                    <div className={cl.profile__name}>Dmitry Konoplyannikov</div>
-                    <div className={cl.profile__nickname}>@Kin1599</div>
-                </div>
-            </div>
+            </Link>
             <div className={cl.sideBar__logout}>
                 <img src={logout} alt="logout" />
             </div>

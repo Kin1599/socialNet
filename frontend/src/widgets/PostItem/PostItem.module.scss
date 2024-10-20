@@ -1,0 +1,128 @@
+@use '../../shared/styles/fonts.scss' as *;
+
+@mixin flex-center($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin text-style($family, $color) {
+  font-family: $family;
+  color: $color;
+}
+
+@mixin image-style($width, $height, $border-radius: 0) {
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  object-fit: cover;
+}
+
+.postItem {
+  background-color: #FFF;
+  width: 696px;
+  border-radius: 20px;
+
+  &__header {
+    @include flex-center(row, space-between, flex-start);
+    border-bottom: 1px solid #E2E8F0;
+    padding: 20px;
+  }
+
+  &__profile {
+    @include flex-center(row, flex-start, center);
+    gap: 12px;
+    cursor: pointer;
+
+    .profile__avatar {
+      @include image-style(40px, 40px, 50%);
+    }
+
+    .profile__info {
+      > *:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      .info__name {
+        @include text-style("Plus Jakarta Sans Bold", #1E293B);
+      }
+
+      .info__description {
+        @include text-style(null, #475569);
+      }
+    }
+  }
+
+  &__content {
+    padding: 20px;
+
+    > *:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    .content__text {
+      color: #1E293B;
+
+      > span {
+        color: #4F46E5;
+        margin-right: 4px;
+      }
+    }
+
+    .content__images {
+      @include image-style(100%, 260px, 16px);
+    }
+
+    .content__stats {
+      @include flex-center(row, space-between, center);
+
+      .stats__left {
+        @include flex-center(row, flex-start, center);
+        gap: 24px;
+      }
+
+      .stats {
+        @include flex-center(row, flex-start, center);
+        @include text-style("Plus Jakarta Sans Medium", #1E293B);
+        gap: 8px;
+        cursor: pointer;
+      }
+
+      .bookmark__btn {
+        @include image-style(20px, 20px);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__actions {
+    @include flex-center(row, space-between, center);
+    border-top: 1px solid #E2E8F0;
+    padding: 20px;
+
+    .actions__input{
+        height: 40px;
+        width: 400px;
+        border-radius: 123px;
+        border: 1px solid #CBD5E1;
+        outline: none;
+        padding: 10px 12px;
+        @include text-style("Plus Jakarta Sans Medium", #475569);
+    }
+
+    .actions__left {
+      @include flex-center(row, flex-start, center);
+      gap: 8px;
+
+      > img {
+        @include image-style(40px, 40px, 50%);
+      }
+    }
+
+    .actions__btn {
+      @include flex-center(row, flex-start, center);
+      gap: 8px;
+    }
+  }
+}

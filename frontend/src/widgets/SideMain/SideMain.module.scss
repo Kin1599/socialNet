@@ -1,0 +1,45 @@
+
+@use '../../shared/styles/fonts.scss' as *;
+
+.sideMain{
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        height: 88px;
+        border-bottom: 1px solid #E2E8F0;
+        padding: 20px 24px 0 24px;
+    }
+
+    &__profile{
+        position: relative;
+        height: 48px;
+        cursor: pointer;
+
+        .profile__img{
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;    
+        }
+
+        .profile__status{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #22C55E;
+            border: 1.5px solid #FFF;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+    }
+
+    &__actions{
+        display: flex;
+        gap: 8px;
+    }
+
+    &__main{
+        padding: 24px;
+    }
+}

@@ -1,18 +1,48 @@
 
+.mainPage {
+  display: grid;
+  grid-template-columns: 312px 760px auto;
+  height: 100vh;
 
-.mainPage{
-    display: grid;
-    grid-template-columns: 312px 760px 368px;
+  &__content,
+  &__sidebar,
+  &__extra {
+    overflow-y: auto;
+    scrollbar-width: none; /* для Firefox */
+    -ms-overflow-style: none; /* для IE и Edge */
 
-    &__content{
-        
-        .content__header{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid #E2E8F0;
-            padding: 20px 32px;
-            background-color: #FFFFFF;
-        }
+    &::-webkit-scrollbar {
+      display: none; /* для Chrome, Safari и Opera */
     }
+  }
+
+  &__content {
+    grid-column: 2;
+
+    .content__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 20px 32px;
+      background-color: #FFFFFF;
+    }
+
+    .content__posts {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 16px;
+
+      > * {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__extra{
+    grid-column: 3;
+    background-color: #FFF;
+    border: 1px solid #E2E8F0;
+  }
 }
