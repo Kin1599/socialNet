@@ -75,7 +75,7 @@ function MainPage() {
 
   return (
     <div className={cl.mainPage}>
-      <div className={cl.mainPage__sideBar}>
+      <div className={cl.mainPage__sidebar}>
         <SideBar avatar={avatar}/>
       </div>
       <div className={cl.mainPage__content}>

@@ -15,9 +15,11 @@
     }
 }
 
+//TODO: исправить размер колонок и уходящую кнопку свернуть
 .profilePage {
     display: grid;
-    grid-template-columns: 312px 760px auto;
+    grid-template-columns: minmax(80px, 312px) 760px auto;
+    grid-template-areas: "sidebar contentCenter extra";
     height: 100vh;
     overflow: hidden;
 
@@ -32,6 +34,24 @@
         &::-webkit-scrollbar {
             display: none; /* Chrome, Safari and Opera */
         }
+    }
+
+    &__sidebar{
+        grid-column: 1;
+        grid-area: sidebar;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__content{
+        grid-column: 2;
+        grid-area: contentCenter;
+    }
+
+    &__extra{
+        grid-column: 3;
+        grid-area: extra;
     }
 
     &__header {

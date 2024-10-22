@@ -1,7 +1,8 @@
 
 .mainPage {
   display: grid;
-  grid-template-columns: 312px 760px auto;
+  grid-template-columns: minmax(80px, 312px) auto-fill auto-fit;
+  grid-template-areas: "sidebar content extra";
   height: 100vh;
 
   &__content,
@@ -16,8 +17,17 @@
     }
   }
 
+  &__sidebar{
+    grid-column: 1;
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__content {
     grid-column: 2;
+    grid-area: content;
 
     .content__header {
       display: flex;
@@ -42,6 +52,7 @@
 
   &__extra{
     grid-column: 3;
+    grid-area: extra;
     background-color: #FFF;
     border: 1px solid #E2E8F0;
   }
