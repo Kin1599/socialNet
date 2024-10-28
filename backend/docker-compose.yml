@@ -8,13 +8,13 @@ services:
     depends_on:
       - db
     env_file:
-      - .env  # Загрузить переменные из .env
+      - .env
 
   db:
     image: postgres
     container_name: postgres_db
     environment:
-      POSTGRES_USER: ${DB_USERNAME}       # Сопоставляем переменные из .env
+      POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     ports:
@@ -27,7 +27,7 @@ services:
     restart: unless-stopped
     container_name: watchtower
     environment:
-      - WATCHTOWER_POLL_INTERVAL=1800
+      - WATCHTOWER_POLL_INTERVAL=100
       - WATCHTOWER_CLEANUP=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

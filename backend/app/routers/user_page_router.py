@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from app.db_requests import create_new_user, user_login
-from app.models import UserDtoLogin, UserReg, PostModel
+from app.db_models import Post, User
+from app.models import PostModel
 from sqlalchemy.orm import Session
 from app.config.database import create_session
 from app.auth.auth_bearer import JWTBearer
@@ -10,7 +11,7 @@ from app.auth.auth_handler import signJWT, token_response, decodeJWT
 router = APIRouter(tags=['UserPage'])
 
 
-@router.get("/user", dependencies=[Depends(JWTBearer())], tags=[""])
+@router.get("/{user}", dependencies=[Depends(JWTBearer())], tags=[""])
 def user_page(db: Session = Depends(create_session), jwt: JWTBearer = Depends(JWTBearer())):
     uid = decodeJWT(jwt).get('user_id')
     return get_user_page(uid, db)
